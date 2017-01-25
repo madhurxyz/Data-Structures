@@ -28,16 +28,19 @@ def encode(num, base):
     """
     assert 2 <= base <= 36
 
-    remainder_array = []
+    remainder_str = ""
     stop = False
     while stop is False:
         remainder = num%base
-        print remainder
-
-
+        remainder_str += str(remainder)
         num = num/base
         if num is 0:
             stop = True
+
+    #reverses remainder string
+    e = remainder_str[::-1]
+    print e
+    return e
 
 def convert(str_num, base1, base2):
     """
