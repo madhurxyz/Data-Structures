@@ -1,8 +1,6 @@
 #!python
 
 import string
-from sixteen import encode_sixteen, decode_sixteen
-from thirtytwo import encode_thirtytwo, decode_thirtytwo
 
 def decode(str_num, base):
     """
@@ -16,14 +14,10 @@ def decode(str_num, base):
     length = len(str_num)
     decode_sum = 0
     for i in range(0,length):
-        if base is not 16 and base is not 32:
+        if str_num[i].isdigit():
             int_num = int(str_num[i])
-        elif base is 16:
-            sixteen = decode_sixteen(str_num[i])
-            int_num = int(sixteen)
-        elif base is 32:
-            thirtytwo = decode_thirtytwo(str_num[i])
-            int_num = int(thirtytwo)
+        if not str_num[i].isdigit():
+            int_num = ord(str_num[i]) - 87
         conversion = base**(length - i - 1)
         decode_num = int_num*conversion
         decode_sum += decode_num
@@ -42,10 +36,8 @@ def encode(num, base):
     remainder_str = ""
     while num is not 0:
         remainder = num%base
-        if base is 16:
-            remainder = encode_sixteen(remainder)
-        if base is 32:
-            remainder = encode_thirtytwo(remainder)
+        if remainder > 9:
+            remainder = chr(remainder + 87)
         remainder_array.append(str(remainder))
         num = num/base
 
