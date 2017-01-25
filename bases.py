@@ -29,17 +29,13 @@ def encode(num, base):
     assert 2 <= base <= 36
 
     remainder_str = ""
-    stop = False
-    while stop is False:
+    while num is not 0:
         remainder = num%base
         remainder_str += str(remainder)
         num = num/base
-        if num is 0:
-            stop = True
 
     #reverses remainder string
     e = remainder_str[::-1]
-    print e
     return e
 
 def convert(str_num, base1, base2):
@@ -51,7 +47,7 @@ def convert(str_num, base1, base2):
 
     d = decode(str_num, base1)
     e = encode(d, base2)
-
+    return e
 
 
 def main():
