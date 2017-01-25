@@ -1,7 +1,6 @@
 #!python
 
 import string
-#Linking local repo to remote github repo
 
 def decode(str_num, base):
     """
@@ -10,6 +9,7 @@ def decode(str_num, base):
     base -- base of given number
     """
     assert 2 <= base <= 36
+
     length = len(str_num)
     decode_sum = 0
     for i in range(0,length):
@@ -17,6 +17,7 @@ def decode(str_num, base):
         conversion = base**(length - i - 1)
         decode_num = int_num*conversion
         decode_sum += decode_num
+
     return decode_sum
 
 def encode(num, base):
@@ -27,6 +28,16 @@ def encode(num, base):
     """
     assert 2 <= base <= 36
 
+    remainder_array = []
+    stop = False
+    while stop is False:
+        remainder = num%base
+        print remainder
+
+
+        num = num/base
+        if num is 0:
+            stop = True
 
 def convert(str_num, base1, base2):
     """
