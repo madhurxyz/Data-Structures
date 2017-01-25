@@ -34,10 +34,14 @@ def encode(num, base):
         remainder = num%base
         remainder_str += str(remainder)
         num = num/base
-    
-    #reverses remainder string
-    e = remainder_str[::-1]g
-    return e
+
+    if base <= 10:
+        #reverses remainder string
+        e = remainder_str[::-1]
+        return e
+    elif base > 10:
+        e = remainder_str
+        return e
 
 def convert(str_num, base1, base2):
     """
