@@ -28,7 +28,6 @@ def decode(str_num, base):
         decode_num = int_num*conversion
         decode_sum += decode_num
 
-
     return decode_sum
 
 def encode(num, base):
