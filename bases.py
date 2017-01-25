@@ -26,7 +26,7 @@ def decode(str_num, base):
             int_num = int(thirtytwo)
         conversion = base**(length - i - 1)
         decode_num = int_num*conversion
-        decode_sum += decode_num
+        decode_sum += decode_num 
 
 
     return decode_sum
