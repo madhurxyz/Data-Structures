@@ -32,11 +32,23 @@ def encode(num, base):
     remainder_str = ""
     while num is not 0:
         remainder = num%base
+        if base is 16:
+            if remainder is 10:
+                remainder = "A"
+            if remainder is 11:
+                remainder = "B"
+            if remainder is 12:
+                remainder = "C"
+            if remainder is 13:
+                remainder = "D"
+            if remainder is 14:
+                remainder = "E"
+            if remainder is 15:
+                remainder = "F"
         remainder_str += str(remainder)
         num = num/base
 
     if base <= 10:
-        #reverses remainder string
         e = remainder_str[::-1]
         return e
     elif base > 10:
