@@ -1,21 +1,8 @@
 #!python
 
 import string
-
-def sixteen(remainder):
-    if remainder is 10:
-        remainder = "A"
-    if remainder is 11:
-        remainder = "B"
-    if remainder is 12:
-        remainder = "C"
-    if remainder is 13:
-        remainder = "D"
-    if remainder is 14:
-        remainder = "E"
-    if remainder is 15:
-        remainder = "F"
-    return remainder
+from sixteen import encode_sixteen, decode_sixteen
+from thirtytwo import encode_thirtytwo, decode_thirtytwo
 
 def decode(str_num, base):
     """
@@ -25,13 +12,21 @@ def decode(str_num, base):
     """
     assert 2 <= base <= 36
 
+
     length = len(str_num)
     decode_sum = 0
     for i in range(0,length):
-        int_num = int(str_num[i])
+        if base is not 16 and base is not 32:
+            int_num = int(str_num[i])
+        elif base is 16:
+            sixteen = decode_sixteen(str_num[i])
+            int_num = int(sixteen)
+        elif base is 32
+            thirtytwo = decode_thirtytwo(str_num[i])
         conversion = base**(length - i - 1)
         decode_num = int_num*conversion
         decode_sum += decode_num
+
 
     return decode_sum
 
@@ -48,11 +43,13 @@ def encode(num, base):
     while num is not 0:
         remainder = num%base
         if base is 16:
-            remainder = sixteen(remainder)
+            remainder = encode_sixteen(remainder)
+        if base is 32:
+            remainder = encode_thirtytwo(remainder)
         remainder_array.append(str(remainder))
-        reversed_remainder_array = remainder_array[::-1]
         num = num/base
 
+    reversed_remainder_array = remainder_array[::-1]
     for i in range(0, len(reversed_remainder_array)):
         remainder_str += reversed_remainder_array[i]
 
