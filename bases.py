@@ -2,6 +2,20 @@
 
 import string
 #only works for bases 2-10
+# def sixteen(remainder):
+#     if remainder is 10:
+#         remainder = "A"
+#     if remainder is 11:
+#         remainder = "B"
+#     if remainder is 12:
+#         remainder = "C"
+#     if remainder is 13:
+#         remainder = "D"
+#     if remainder is 14:
+#         remainder = "E"
+#     if remainder is 15:
+#         remainder = "F"
+#     return remainder
 
 def decode(str_num, base):
     """
@@ -29,31 +43,26 @@ def encode(num, base):
     """
     assert 2 <= base <= 36
 
+    remainder_array = []
     remainder_str = ""
     while num is not 0:
         remainder = num%base
-        if base is 16:
-            if remainder is 10:
-                remainder = "A"
-            if remainder is 11:
-                remainder = "B"
-            if remainder is 12:
-                remainder = "C"
-            if remainder is 13:
-                remainder = "D"
-            if remainder is 14:
-                remainder = "E"
-            if remainder is 15:
-                remainder = "F"
-        remainder_str += str(remainder)
+        # if base is 16:
+        #     remainder = sixteen(remainder)
+        remainder_array.append(str(remainder))
+        reversed_remainder_array = remainder_array[::-1]
         num = num/base
 
-    if base <= 10:
-        e = remainder_str[::-1]
-        return e
-    elif base > 10:
-        e = remainder_str
-        return e
+    for i in range(0, len(reversed_remainder_array)):
+        remainder_str += reversed_remainder_array[i]
+    print remainder_str
+    # print remainder_str
+    # # if base <= 10:
+    # e = remainder_str[::-1]
+    # print e
+    # # elif base > 10:
+    # #     e = remainder_str
+    # #     return e
 
 def convert(str_num, base1, base2):
     """
