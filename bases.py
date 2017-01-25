@@ -1,6 +1,7 @@
 #!python
 
 import string
+#only works for bases 2-10
 
 def decode(str_num, base):
     """
@@ -33,9 +34,9 @@ def encode(num, base):
         remainder = num%base
         remainder_str += str(remainder)
         num = num/base
-
+    
     #reverses remainder string
-    e = remainder_str[::-1]
+    e = remainder_str[::-1]g
     return e
 
 def convert(str_num, base1, base2):
