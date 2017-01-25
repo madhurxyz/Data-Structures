@@ -18,31 +18,31 @@ def encode_thirtytwo(remainder):
     if remainder is 18:
         remainder = "i"
     if remainder is 19:
-        remainder = "k"
+        remainder = "j"
     if remainder is 20:
-        remainder = "m"
+        remainder = "k"
     if remainder is 21:
-        remainder = "n"
+        remainder = "l"
     if remainder is 22:
-        remainder = "p"
+        remainder = "m"
     if remainder is 23:
-        remainder = "q"
+        remainder = "n"
     if remainder is 24:
-        remainder = "r"
+        remainder = "o"
     if remainder is 25:
-        remainder = "s"
+        remainder = "p"
     if remainder is 26:
-        remainder = "t"
+        remainder = "q"
     if remainder is 27:
-        remainder = "v"
+        remainder = "r"
     if remainder is 28:
-        remainder = "w"
+        remainder = "s"
     if remainder is 29:
-        remainder = "x"
+        remainder = "t"
     if remainder is 30:
-        remainder = "y"
+        remainder = "u"
     if remainder is 31:
-        remainder = "z"
+        remainder = "v"
     return remainder
 
 def decode_thirtytwo(num):
@@ -64,30 +64,30 @@ def decode_thirtytwo(num):
         num = 17
     if num is "i":
         num = 18
-    if num is "k":
+    if num is "j":
         num = 19
-    if num is "m":
+    if num is "k":
         num = 20
-    if num is "n":
+    if num is "l":
         num = 21
-    if num is "p":
+    if num is "m":
         num = 22
-    if num is "q":
+    if num is "n":
         num = 23
-    if num is "r":
+    if num is "o":
         num = 24
-    if num is "s":
+    if num is "p":
         num = 25
-    if num is "t":
+    if num is "q":
         num = 26
-    if num is "v":
+    if num is "r":
         num = 27
-    if num is "w":
+    if num is "s":
         num = 28
-    if num is "x":
+    if num is "t":
         num = 29
-    if num is "y":
+    if num is "u":
         num = 30
-    if num is "z":
+    if num is "v":
         num = 31
     return num
