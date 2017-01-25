@@ -21,8 +21,9 @@ def decode(str_num, base):
         elif base is 16:
             sixteen = decode_sixteen(str_num[i])
             int_num = int(sixteen)
-        elif base is 32
+        elif base is 32:
             thirtytwo = decode_thirtytwo(str_num[i])
+            int_num = int(thirtytwo)
         conversion = base**(length - i - 1)
         decode_num = int_num*conversion
         decode_sum += decode_num
