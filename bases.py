@@ -11,12 +11,13 @@ def decode(str_num, base):
     """
     assert 2 <= base <= 36
     length = len(str_num)
-    decode_array = []
+    decode_sum = 0
     for i in range(0,length):
         int_num = int(str_num[i])
         conversion = base**(length - i - 1)
         decode_num = int_num*conversion
-        print decode_num
+        decode_sum += decode_num
+    return decode_sum
 
 def encode(num, base):
     """
