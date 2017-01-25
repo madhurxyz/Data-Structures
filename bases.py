@@ -55,14 +55,9 @@ def encode(num, base):
 
     for i in range(0, len(reversed_remainder_array)):
         remainder_str += reversed_remainder_array[i]
-    print remainder_str
-    # print remainder_str
-    # # if base <= 10:
-    # e = remainder_str[::-1]
-    # print e
-    # # elif base > 10:
-    # #     e = remainder_str
-    # #     return e
+
+    e = remainder_str
+    return e
 
 def convert(str_num, base1, base2):
     """
