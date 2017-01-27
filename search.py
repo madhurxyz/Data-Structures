@@ -71,11 +71,11 @@ def binary_search_recursive(array, item, left=None, right=None):
     if left is not None and right is not None:
         half = (left+right)/2
 
-    if array[half] == item:
+    if not left<=right:
+        return None
+    elif array[half] == item:
         return half
     elif item < array[half]:
         return binary_search_recursive(array, item, left, half - 1)
     elif item > array[half]:
         return binary_search_recursive(array, item, half + 1, right)
-
-    return None
