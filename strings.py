@@ -9,23 +9,51 @@ def is_palindrome(text):
     # implement is_palindrome_iterative and is_palindrome_recursive below, then
     # change this to call your implementation to verify it passes all tests
     assert isinstance(text, str)
-    return is_palindrome_iterative(text)
-    # return is_palindrome_recursive(text)
+    # return is_palindrome_iterative(text)
+    return is_palindrome_recursive(text)
 
 
 def is_palindrome_iterative(text):
-    # TODO: implement the is_palindrome function iteratively here
-    pass
-    # once implemented, change is_palindrome to call is_palindrome_iterative
-    # to verify that your iterative implementation passes all tests
+    new_text = text.replace(" ", "").lower()
+    delete = '!()-[]{};:"\,<>./?@#$%^&*_~\x80\x98\x99\x94\''
+    letters = ''
+    for letter in new_text:
+        if letter not in delete:
+            letters += letter
+
+    left = 0
+    right = len(letters)-1
+    while left<=right:
+        if letters[left] == letters[right]:
+            left = left + 1
+            right = right - 1
+        else:
+            return False
+    return True
 
 
 def is_palindrome_recursive(text, left=None, right=None):
-    # TODO: implement the is_palindrome function recursively here
-    pass
-    # once implemented, change is_palindrome to call is_palindrome_recursive
-    # to verify that your iterative implementation passes all tests
+    new_text = text.replace(" ", "").lower()
+    delete = '!()-[]{};:"\,<>./?@#$%^&*_~\x80\x98\x99\x94\''
+    letters = ''
+    for letter in new_text:
+        if letter not in delete:
+            letters += letter
 
+    if left is None and right is None:
+        left = 0
+        right = len(letters)-1
+
+    if len(letters) <= 1:
+        return True
+
+    if left < right:
+        if letters[left] == letters[right]:
+            return True
+        else:
+            return is_palindrome_recursive(letters, left + 1, right - 1)
+
+    return False
 
 def main():
     import sys
