@@ -1,5 +1,7 @@
 #!python
 
+#Worst Case: O(m*n)
+#Best Case: Omega(n)
 def in_string(super_str, sub_str):
     assert isinstance(super_str, str)
     assert isinstance(sub_str, str)

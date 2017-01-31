@@ -2,7 +2,8 @@
 
 import string
 
-
+#Worst Case: O(n/2) => O(n)
+#Best Case: Omega(1)
 def is_palindrome(text):
     """A string of characters is a palindrome if it reads the same forwards and
     backwards, ignoring punctuation, whitespace, and letter casing"""
